@@ -15,11 +15,15 @@ MAX_FILE_BYTES = 25 * 1024 * 1024
 REQUIRED_FILES = [
     "README.md",
     "docs/architecture.md",
+    "docs/build-evolution.md",
     "docs/engineering-process.md",
     "docs/results.md",
     "docs/safety-and-limitations.md",
+    "docs/software-lineage.md",
     "docs/reproducibility.md",
     "evidence/metrics.json",
+    "media/portfolio/ari-build-story.mp4",
+    "media/portfolio/ari-build-story-poster.jpg",
     "LICENSE",
     ".gitignore",
     "CITATION.cff",
@@ -121,6 +125,28 @@ def validate_language(errors: list[str]) -> None:
         if phrase not in combined:
             errors.append(f"missing required explicit language: {phrase}")
 
+    required_public_story = [
+        "june 2025",
+        "sara",
+        "hermes agent",
+        "obsidian vault",
+        "deterministic scripted physical gait",
+        "not a learned hardware policy",
+        "controller is unspecified",
+    ]
+    for phrase in required_public_story:
+        if phrase not in combined:
+            errors.append(f"missing required portfolio language: {phrase}")
+
+
+def validate_portfolio_media(errors: list[str]) -> None:
+    video = ROOT / "media" / "portfolio" / "ari-build-story.mp4"
+    poster = ROOT / "media" / "portfolio" / "ari-build-story-poster.jpg"
+    if not video.is_file() or not poster.is_file():
+        return
+    if video.stat().st_size >= 20 * 1024 * 1024:
+        errors.append("portfolio build-story video must be under 20 MiB")
+
 
 def validate_sanitization(errors: list[str]) -> None:
     for path in iter_files():
@@ -153,6 +179,7 @@ def main() -> int:
     validate_required(errors)
     validate_metrics(errors)
     validate_language(errors)
+    validate_portfolio_media(errors)
     validate_sanitization(errors)
 
     if errors:

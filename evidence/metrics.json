@@ -60,6 +60,22 @@
     "forward_replay_displacement_m": 0.00003036,
     "forward_gate_m": 0.005
   },
+  "runv4_stage2_first_end_to_end_ppo": {
+    "provenance_category": "verified simulator training/evaluation evidence loop",
+    "date": "2026-08-03",
+    "status": "pipeline completed; learned gait failed fixed-command gate; not promoted",
+    "simulator_only": true,
+    "accepted_optimizer_updates": 25,
+    "num_envs": 64,
+    "steps_per_env": 24,
+    "finite_checkpoint_produced": true,
+    "fixed_command_evaluation_performed": true,
+    "process_lock_ownership_cleaned_up": true,
+    "fixed_forward_command_mps": 0.05,
+    "fixed_forward_displacement_m": -4.2119063436985016e-05,
+    "forward_gate_m": 0.005,
+    "promotion": false
+  },
   "public_boundaries": [
     "Portfolio snapshot, not full operational tree.",
     "No model checkpoints or binary training artifacts are included.",
