@@ -72,6 +72,7 @@ The conservative metric record is in [evidence/metrics.json](evidence/metrics.js
 - Run64: 0.2704 m/s measured in simulation on a 0.45 m/s command with zero falls and contact match 0.9488.
 - Run94.8: scan-turn simulator qualification selected Run94.6 `model_11` for full +/-360 degree simulator-only qualification with zero falls.
 - RunV4: force-drive zero-action simulator diagnostic completed 64 environments for 3,000 steps with zero true terminations.
+- Run104: simulator-only continuation from the preserved verified Run63 deployable-observation actor completed 500 PPO updates across 2,048 parallel environments; update 100 was selected as the champion, while update 500 was not promoted because it reduced locomotion displacement despite stable contacts.
 - Stage1 safe 0.25: reached 50 optimizer updates but is not promoted; the +0.05 m/s forward replay displaced about 0.00003036 m against a 0.005 m gate.
 - August 3, 2026 RunV4 Stage-2: first end-to-end RunV4 Stage-2 PPO campaign genuinely executed in headless Isaac Lab. The pipeline completed 25 genuine optimizer updates across 64 environments with 24 steps per environment, produced a finite checkpoint, ran fixed-command evaluation, and cleaned up process/lock ownership. Capability did not pass: the fixed +0.05 m/s command produced approximately -0.000042 m mean forward displacement against the unchanged 0.005 m promotion gate, so it was not promoted.
 

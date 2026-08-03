@@ -21,6 +21,47 @@
     "simulator_only": true,
     "notes": "Deployable-observation forward-walking baseline; deterministic hardware gait is separate."
   },
+  "run104_run63_actor_relearn_20260803": {
+    "provenance_category": "verified simulator training milestone",
+    "date": "2026-08-03",
+    "status": "training completed; update 100 selected; final update 500 not promoted",
+    "simulator_only": true,
+    "initialized_from": "preserved verified Run63 deployable-observation actor",
+    "hardware_commanded": false,
+    "parallel_envs": 2048,
+    "ppo_updates_completed": 500,
+    "transitions": 24576000,
+    "wall_time_seconds": 795.6,
+    "seed_three_speed_8s_eval": {
+      "mean_displacement_m": 1.00149,
+      "contact_match": 0.9468
+    },
+    "selected_result": {
+      "update": 100,
+      "role": "champion",
+      "mean_displacement_m": 1.00323,
+      "mean_displacement_delta_percent": 0.174,
+      "contact_match": 0.96855,
+      "falls": 0,
+      "promotion": false,
+      "selection_reason": "Best verified continuation result; selected from simulator-only fixed-command evaluation."
+    },
+    "final_update": {
+      "update": 500,
+      "mean_displacement_m": 0.7601,
+      "mean_displacement_delta_percent": -24.10,
+      "contact_match": 0.97092,
+      "falls": 0,
+      "promotion": false,
+      "rejection_reason": "Rejected because it traded locomotion speed for contact/stability."
+    },
+    "fixed_command_evaluation": {
+      "hardware_commanded": false,
+      "falls": 0
+    },
+    "final_explained_variance": 0.9028,
+    "interpretation": "Final explained variance proves value-function learning but not actor improvement; completed training is distinct from promotion."
+  },
   "run64_speed_envelope": {
     "provenance_category": "verified simulator summary",
     "status": "speed-envelope evidence, not full balance-table promotion",
