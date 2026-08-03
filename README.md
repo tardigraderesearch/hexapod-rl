@@ -60,7 +60,7 @@ The physical robot came third. ARI expanded into an 18-DOF hexapod with CAD/fabr
 - Current model: mechanical layout, power/control stack, and ESP32-class servo integration mature.
 - Early gait development: learning-to-walk footage shows gait exploration; the public artifact does not specify the controller.
 - Scripted physical walk: deterministic hardware gait shows coordinated servo motion on the real robot.
-- Run63 simulation: simulator-only deployable-observation locomotion evidence supports research without claiming hardware policy deployment.
+- Run63 simulation: simulator-only legacy-axis locomotion evidence supports research without claiming physical-forward walking or hardware policy deployment.
 
 ## Selected Results
 
@@ -68,17 +68,21 @@ The conservative metric record is in [evidence/metrics.json](evidence/metrics.js
 
 - Physical platform: six legs and 18 total degrees of freedom.
 - Hardware evidence: deterministic scripted physical gait on the current robot.
-- Run63: canonical historical deployable-observation simulator walker.
-- Run64: 0.2704 m/s measured in simulation on a 0.45 m/s command with zero falls and contact match 0.9488.
+- August 3, 2026 correction: rendered simulator evidence exposed a frame-sign mismatch in the legacy Run63 handoff/trainer. The physical robot convention is body +X as forward, but the legacy evaluator treated URDF -X displacement as positive command-vx progress. Run63, Run64, Run104, and Run105 are therefore legacy -X simulator-locomotion evidence, backward relative to the physical chassis front, not physical-forward walking or speed evidence.
+- Run63: canonical historical deployable-observation legacy-axis locomotion policy.
+- Run64: 0.2704 m/s measured in simulation on a 0.45 m/s command with zero falls and contact match 0.9488, under the legacy -X evaluator axis only.
 - Run94.8: scan-turn simulator qualification selected Run94.6 `model_11` for full +/-360 degree simulator-only qualification with zero falls.
 - RunV4: force-drive zero-action simulator diagnostic completed 64 environments for 3,000 steps with zero true terminations.
-- Run104: simulator-only continuation from the preserved verified Run63 deployable-observation actor completed 500 PPO updates across 2,048 parallel environments; update 100 was selected as the champion, while update 500 was not promoted because it reduced locomotion displacement despite stable contacts.
+- Run104: simulator-only continuation from the preserved verified Run63 deployable-observation actor completed 500 PPO updates across 2,048 parallel environments, totaling 24,576,000 transitions; update 100 was selected within the legacy-axis campaign, while update 500 was not promoted because it reduced legacy-axis displacement despite stable contacts. It is not a physical-forward champion.
+- Run105: legacy-axis speed campaign completed 500 updates, but no candidate was promoted; the parent policy was retained, and the campaign is not reported as speed progress.
 - Stage1 safe 0.25: reached 50 optimizer updates but is not promoted; the +0.05 m/s forward replay displaced about 0.00003036 m against a 0.005 m gate.
 - August 3, 2026 RunV4 Stage-2: first end-to-end RunV4 Stage-2 PPO campaign genuinely executed in headless Isaac Lab. The pipeline completed 25 genuine optimizer updates across 64 environments with 24 steps per environment, produced a finite checkpoint, ran fixed-command evaluation, and cleaned up process/lock ownership. Capability did not pass: the fixed +0.05 m/s command produced approximately -0.000042 m mean forward displacement against the unchanged 0.005 m promotion gate, so it was not promoted.
 
 ## Capability Boundaries
 
 The deterministic physical walk and learned simulator policies are separate capabilities. The physical gait is scripted and inspectable. Learned locomotion remains simulator-only in this snapshot.
+
+Physical-forward learned locomotion capability is reopened pending +X-corrected retraining and validation. No learned policy is cleared for hardware.
 
 Stage1 force-drive work is not promoted and is not cleared for hardware. Autonomous hardware motion is prohibited.
 

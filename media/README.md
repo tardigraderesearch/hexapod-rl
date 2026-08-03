@@ -28,10 +28,12 @@ This directory contains authentic sanitized media for the public portfolio. It d
 
 ## Simulator Evidence
 
-- `run63_deploy_walk_frame.png`: simulator frame from the Run63 deployable-observation forward-walking capture.
+- `run63_deploy_walk_frame.png`: simulator frame from the Run63 deployable-observation legacy-axis locomotion capture.
 - `ari_run63_deploy_walk_0p25.mp4`: same Run63 simulator capture, fixed 0.25 m/s command, 6 environments, deployable-observation configuration.
 
 Run63 media is simulator-only evidence. It is not hardware deployment evidence.
+
+August 3, 2026 correction: rendered simulator evidence exposed that the legacy Run63 handoff/trainer treated URDF -X displacement as positive command-vx progress while the physical robot convention is body +X as forward. Run63, Run64, Run104, and Run105 legacy-axis media/metrics are therefore backward relative to the physical chassis front and are not physical-forward walking or speed evidence. The new Run104 update-100 render is not included in this public snapshot.
 
 ## Portfolio Exports
 

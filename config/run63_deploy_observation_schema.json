@@ -1,6 +1,7 @@
 {
   "portfolio_snapshot": true,
-  "policy_family": "Run63 deployable-observation forward walker",
+  "policy_family": "Run63 deployable-observation legacy-axis locomotion policy",
+  "axis_correction_note": "August 3, 2026: rendered simulator evidence exposed that the legacy Run63 handoff/trainer treated URDF -X displacement as positive command-vx progress, while the physical robot convention is body +X as forward. This schema documents the legacy-axis policy and does not claim physical-forward walking.",
   "simulator_only": true,
   "observation_dim": 72,
   "action_dim": 18,
@@ -12,7 +13,7 @@
     {"range": "9..26", "name": "joint_position_error_vs_reference", "source": "commanded-target proxy"},
     {"range": "27..44", "name": "joint_velocity_proxy", "source": "finite difference of commanded targets, scaled by 0.05"},
     {"range": "45..46", "name": "gait_phase_sin_cos", "source": "host phase accumulator"},
-    {"range": "47", "name": "command_vx", "source": "forward command, scaled by 3.0"},
+    {"range": "47", "name": "command_vx", "source": "legacy-axis command, scaled by 3.0; positive legacy progress maps to URDF -X and is backward relative to the physical chassis front"},
     {"range": "48..65", "name": "previous_action", "source": "prior clamped policy action"},
     {"range": "66..71", "name": "foot_switches", "source": "debounced contact bits"}
   ],

@@ -58,7 +58,7 @@ Deterministic scripted physical gait: [physical-scripted-walk-demo.mp4](../media
 
 ![Run63 simulator frame](../media/run63_deploy_walk_frame.png)
 
-Run63 simulator-only locomotion evidence: [ari_run63_deploy_walk_0p25.mp4](../media/ari_run63_deploy_walk_0p25.mp4). This validates a deployable-observation policy in simulation and is not hardware deployment evidence.
+Run63 simulator-only legacy-axis locomotion evidence: [ari_run63_deploy_walk_0p25.mp4](../media/ari_run63_deploy_walk_0p25.mp4). This validates a deployable-observation policy in simulation under the legacy -X evaluator axis, backward relative to the physical chassis front. It is not physical-forward walking evidence and is not hardware deployment evidence.
 
 ## Portfolio Video
 

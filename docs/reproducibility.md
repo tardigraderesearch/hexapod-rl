@@ -7,7 +7,7 @@ This repository is not a full reproduction package. It is a public portfolio sna
 - Parse and inspect the conservative metrics file.
 - Read representative control, observation, and evaluator examples.
 - Run the public repository validator.
-- Review simulator media from the Run63 capture.
+- Review simulator media from the Run63 legacy-axis capture.
 
 ## What Is Not Included
 

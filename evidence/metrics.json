@@ -7,7 +7,17 @@
     "deterministic_hardware_gait_proven": true,
     "learned_locomotion_status": "simulator-only",
     "hardware_policy_deployment_cleared": false,
-    "autonomous_hardware_motion_allowed": false
+    "autonomous_hardware_motion_allowed": false,
+    "physical_forward_capability_status": "reopened pending +X-corrected retraining and validation"
+  },
+  "axis_correction_20260803": {
+    "status": "public correction",
+    "summary": "Rendered simulator evidence exposed a frame-sign mismatch: the physical robot convention is body +X as forward, but the legacy Run63 handoff/trainer treated URDF -X displacement as positive command-vx progress.",
+    "affected_runs": ["Run63", "Run64", "Run104", "Run105"],
+    "legacy_axis_interpretation": "Legacy -X displacement and speed figures are valid simulator locomotion/training evidence only under the legacy evaluator axis and are backward relative to the physical chassis front.",
+    "physical_forward_claim_cleared": false,
+    "physical_forward_capability_status": "reopened pending +X-corrected retraining and validation",
+    "learned_policy_cleared_for_hardware": false
   },
   "physical_platform": {
     "provenance_category": "verified physical/context notes",
@@ -17,59 +27,79 @@
   },
   "run63_deploy_observation_baseline": {
     "provenance_category": "verified simulator handoff and media capture",
-    "status": "canonical historical walker",
+    "status": "canonical historical legacy-axis locomotion policy",
     "simulator_only": true,
-    "notes": "Deployable-observation forward-walking baseline; deterministic hardware gait is separate."
+    "legacy_axis": "URDF -X evaluator axis",
+    "backward_relative_to_physical_chassis_front": true,
+    "notes": "Deployable-observation simulator baseline under the legacy -X evaluator axis; deterministic hardware gait is separate. This is not physical-forward walking evidence."
   },
   "run104_run63_actor_relearn_20260803": {
     "provenance_category": "verified simulator training milestone",
     "date": "2026-08-03",
-    "status": "training completed; update 100 selected; final update 500 not promoted",
+    "status": "training completed; update 100 selected within legacy-axis campaign; final update 500 not promoted",
     "simulator_only": true,
     "initialized_from": "preserved verified Run63 deployable-observation actor",
     "hardware_commanded": false,
+    "legacy_axis": "URDF -X evaluator axis",
+    "backward_relative_to_physical_chassis_front": true,
+    "physical_forward_champion": false,
     "parallel_envs": 2048,
     "ppo_updates_completed": 500,
     "transitions": 24576000,
     "wall_time_seconds": 795.6,
     "seed_three_speed_8s_eval": {
-      "mean_displacement_m": 1.00149,
+      "mean_legacy_minus_x_displacement_m": 1.00149,
       "contact_match": 0.9468
     },
     "selected_result": {
       "update": 100,
-      "role": "champion",
-      "mean_displacement_m": 1.00323,
-      "mean_displacement_delta_percent": 0.174,
+      "role": "selected within legacy-axis campaign",
+      "mean_legacy_minus_x_displacement_m": 1.00323,
+      "mean_legacy_minus_x_displacement_delta_percent": 0.174,
       "contact_match": 0.96855,
       "falls": 0,
       "promotion": false,
-      "selection_reason": "Best verified continuation result; selected from simulator-only fixed-command evaluation."
+      "selection_reason": "Best verified continuation result within the legacy-axis simulator-only fixed-command evaluation; not a physical-forward champion."
     },
     "final_update": {
       "update": 500,
-      "mean_displacement_m": 0.7601,
-      "mean_displacement_delta_percent": -24.10,
+      "mean_legacy_minus_x_displacement_m": 0.7601,
+      "mean_legacy_minus_x_displacement_delta_percent": -24.10,
       "contact_match": 0.97092,
       "falls": 0,
       "promotion": false,
-      "rejection_reason": "Rejected because it traded locomotion speed for contact/stability."
+      "rejection_reason": "Rejected because it traded legacy-axis locomotion displacement for contact/stability."
     },
     "fixed_command_evaluation": {
       "hardware_commanded": false,
       "falls": 0
     },
     "final_explained_variance": 0.9028,
-    "interpretation": "Final explained variance proves value-function learning but not actor improvement; completed training is distinct from promotion."
+    "interpretation": "Final explained variance proves value-function learning but not actor improvement; completed training is distinct from promotion. Legacy -X displacement is backward relative to the physical chassis front, so this is not physical-forward walking evidence."
   },
   "run64_speed_envelope": {
     "provenance_category": "verified simulator summary",
-    "status": "speed-envelope evidence, not full balance-table promotion",
+    "status": "legacy-axis speed-envelope evidence, not full balance-table promotion",
     "simulator_only": true,
+    "legacy_axis": "URDF -X evaluator axis",
+    "backward_relative_to_physical_chassis_front": true,
+    "physical_forward_speed_evidence": false,
     "commanded_mps": 0.45,
-    "achieved_mean_mps": 0.2704,
+    "achieved_legacy_minus_x_mean_mps": 0.2704,
     "fall_fraction": 0.0,
     "contact_match": 0.9488
+  },
+  "run105_speed_campaign": {
+    "provenance_category": "verified simulator training summary",
+    "status": "completed; no candidate promoted; parent retained",
+    "simulator_only": true,
+    "legacy_axis": "URDF -X evaluator axis",
+    "backward_relative_to_physical_chassis_front": true,
+    "ppo_updates_completed": 500,
+    "candidate_promoted": false,
+    "parent_retained": true,
+    "reported_as_speed_progress": false,
+    "interpretation": "The whole campaign used the invalid legacy-axis convention and is not physical-forward speed progress."
   },
   "run94_8_scan_turn": {
     "provenance_category": "verified simulator qualification record",
@@ -121,6 +151,8 @@
     "Portfolio snapshot, not full operational tree.",
     "No model checkpoints or binary training artifacts are included.",
     "Learned locomotion is simulator-only and not cleared for physical deployment.",
+    "Legacy Run63, Run64, Run104, and Run105 -X displacement/speed figures are backward relative to the physical chassis front and are not physical-forward capability evidence.",
+    "Physical-forward learned locomotion is reopened pending +X-corrected retraining and validation.",
     "Stage1 force-drive is not promoted.",
     "Autonomous hardware motion is prohibited."
   ]
