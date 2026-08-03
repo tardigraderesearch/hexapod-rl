@@ -6,6 +6,10 @@ This directory contains authentic sanitized media for the public portfolio. It d
 
 - `software-architecture/thinking-architecture.jpg`: hero image for the ARI software thinking architecture; a graph visualization of the linked knowledge and memory structure that supports retrieval and reasoning across the software architecture.
 
+## Collaboration Evidence
+
+- `collaboration/wearable-assistant-interface.jpg`: authentic wearable assistant interface prototype photograph. It shows an assistant response grounded in a camera view of the robot/code workbench and supports the public evidence note for the wearable collaboration pipeline.
+
 ## Build Evolution
 
 - `build-evolution/01-concept-sketches/concept-leg-assembly.jpg`: early leg-assembly concept sketch.

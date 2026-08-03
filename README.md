@@ -8,6 +8,16 @@ Watch the silent captioned build story: [media/portfolio/ari-build-story.mp4](me
 
 This repository is a public, sanitized portfolio snapshot. It is not the full operational tree, does not include checkpoints or private run directories, and cannot command hardware.
 
+## Selected Collaboration Evidence
+
+### Wearable Assistant Interface
+
+![Prototype wearable display showing an assistant response grounded in a camera view of the robot and code workbench](media/collaboration/wearable-assistant-interface.jpg)
+
+A custom wearable application and desktop bridge demonstrated sensor telemetry, push-to-talk audio, local speech recognition, spoken replies, camera-to-multimodal interpretation, and image delivery back to the wearable while preserving one assistant context.
+
+The photograph shows a prototype display with an assistant response grounded in a camera view of the robot/code workbench. See [docs/wearable-assistant.md](docs/wearable-assistant.md) for the public-safe evidence note.
+
 ## Five-Minute Portfolio
 
 ### 1. June 2025: SARA
@@ -84,6 +94,7 @@ AI tools accelerated implementation, review, documentation, and comparison work.
 - [docs/software-lineage.md](docs/software-lineage.md): SARA to ARI assistant to ARI robot.
 - [docs/build-evolution.md](docs/build-evolution.md): visual robot timeline with honest captions.
 - [docs/architecture.md](docs/architecture.md): hardware/simulation/control architecture.
+- [docs/wearable-assistant.md](docs/wearable-assistant.md): public-safe wearable assistant collaboration evidence.
 - [docs/engineering-process.md](docs/engineering-process.md): how runs are gated and reviewed.
 - [docs/results.md](docs/results.md): measured results and non-promotions.
 - [docs/safety-and-limitations.md](docs/safety-and-limitations.md): current boundaries.
