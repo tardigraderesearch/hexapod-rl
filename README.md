@@ -1,6 +1,6 @@
 # ARI: From Local AI Assistant to Embodied Robotics
 
-evilhobo1911 built ARI as a cross-domain engineering program: first a local AI assistant lineage, then a persistent software system grounded in personal knowledge workflows, and finally an 18-DOF hexapod that connects software orchestration to CAD, fabrication, electronics, embedded control, simulation, and safety-gated autonomy research.
+ARI is a cross-domain engineering program: first a local AI assistant lineage, then a persistent software system grounded in knowledge workflows, and finally an 18-DOF hexapod that connects software orchestration to CAD, fabrication, electronics, embedded control, simulation, and safety-gated autonomy research.
 
 [![ARI build story poster](media/portfolio/ari-build-story-poster.jpg)](media/portfolio/ari-build-story.mp4)
 
@@ -12,19 +12,25 @@ This repository is a public, sanitized portfolio snapshot. It is not the full op
 
 ### 1. June 2025: SARA
 
-the author began in June 2025 with SARA, a custom Python assistant wrapper built before Hermes Agent existed in this project. SARA no longer has surviving source in this repository because the author deliberately deleted it later to avoid confusing the earlier assistant with ARI.
+SARA began in June 2025 as a custom Python assistant wrapper built before Hermes Agent existed in this project. SARA no longer has surviving source in this repository; it is a historical source no longer retained after the project moved from the earlier assistant wrapper to ARI.
 
 That makes SARA an honest historical milestone, not a source-backed artifact. This portfolio does not invent SARA screenshots, code, metrics, or detailed capabilities.
 
 ### 2. ARI software system
 
-SARA's lessons evolved into ARI: a persistent assistant grounded in the author's Obsidian vault and later integrated with Hermes Agent for memory, tool use, messaging, voice, and bounded coding delegation. Public documentation stays at the architectural level and omits vault content, paths, IDs, endpoints, credentials, private prompts, and operational configuration.
+SARA's lessons evolved into ARI: a persistent assistant grounded in an Obsidian vault and later integrated with Hermes Agent for memory, tool use, messaging, voice, and bounded coding delegation. Public documentation stays at the architectural level and omits vault content, paths, IDs, endpoints, credentials, private prompts, and operational configuration.
+
+#### Thinking Architecture
+
+![Graph visualization of linked knowledge and memory nodes supporting ARI software retrieval and reasoning](media/software-architecture/thinking-architecture.jpg)
+
+This graph visualization represents the linked knowledge and memory structure that supports retrieval and reasoning across the ARI software architecture.
 
 ### 3. ARI physical robot
 
 The physical robot came third. ARI expanded into an 18-DOF hexapod with CAD/fabrication work, actuator and electronics integration, ESP32-class servo control, deterministic gait, Isaac simulation, deployable-observation design, evaluator gates, and simulator-only locomotion evidence.
 
-## What I Personally Built
+## Implemented Components
 
 - Software architecture: the SARA-to-ARI progression, persistent assistant architecture, Hermes Agent integration boundaries, memory/tool/messaging/voice concepts, and bounded coding-delegation workflow.
 - Mechanics, CAD, and fabrication: the 18-DOF hexapod concept, leg layout, prototype iteration, current frame integration, and serviceable electronics layout.
@@ -71,7 +77,7 @@ The public repository is intentionally sanitized. It excludes model checkpoints,
 
 ## AI-Assisted Development Note
 
-AI tools accelerated implementation, review, documentation, and comparison work. the author retained responsibility for architecture, physical integration, experiment design, safety thresholds, evidence interpretation, and promotion decisions.
+AI tools accelerated implementation, review, documentation, and comparison work. Human oversight was retained for architecture, physical integration, experiment design, safety thresholds, evidence interpretation, and promotion decisions.
 
 ## Repository Tour
 
@@ -87,6 +93,6 @@ AI tools accelerated implementation, review, documentation, and comparison work.
 - [media/](media/): public physical-build and simulator visual evidence.
 - [scripts/validate_public_repo.py](scripts/validate_public_repo.py): public-safety and completeness validator.
 
-Suggested public GitHub description: `Public portfolio snapshot of the author's ARI evolution: local assistant lineage, 18-DOF hexapod hardware, embedded gait control, Isaac simulation, and safety-gated validation.`
+Suggested public GitHub description: `Public portfolio snapshot of ARI: local assistant lineage, 18-DOF hexapod hardware, embedded gait control, Isaac simulation, and safety-gated validation.`
 
 License: MIT. Citation metadata is in [CITATION.cff](CITATION.cff).

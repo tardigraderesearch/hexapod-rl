@@ -2,6 +2,10 @@
 
 This directory contains authentic sanitized media for the public portfolio. It does not contain private run directories, model checkpoints, credentials, local paths, or generated replacement imagery.
 
+## Software Architecture
+
+- `software-architecture/thinking-architecture.jpg`: hero image for the ARI software thinking architecture; a graph visualization of the linked knowledge and memory structure that supports retrieval and reasoning across the software architecture.
+
 ## Build Evolution
 
 - `build-evolution/01-concept-sketches/concept-leg-assembly.jpg`: early leg-assembly concept sketch.
