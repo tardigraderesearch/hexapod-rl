@@ -1,0 +1,25 @@
+{
+  "portfolio_snapshot": true,
+  "policy_family": "Run63 deployable-observation forward walker",
+  "simulator_only": true,
+  "observation_dim": 72,
+  "action_dim": 18,
+  "control_rate_hz": 30,
+  "slots": [
+    {"range": "0..2", "name": "linear_velocity_body", "source": "constant zero in deployable schema"},
+    {"range": "3..5", "name": "angular_velocity_body", "source": "IMU-derived, scaled by 0.25"},
+    {"range": "6..8", "name": "gravity_body", "source": "IMU orientation estimate"},
+    {"range": "9..26", "name": "joint_position_error_vs_reference", "source": "commanded-target proxy"},
+    {"range": "27..44", "name": "joint_velocity_proxy", "source": "finite difference of commanded targets, scaled by 0.05"},
+    {"range": "45..46", "name": "gait_phase_sin_cos", "source": "host phase accumulator"},
+    {"range": "47", "name": "command_vx", "source": "forward command, scaled by 3.0"},
+    {"range": "48..65", "name": "previous_action", "source": "prior clamped policy action"},
+    {"range": "66..71", "name": "foot_switches", "source": "debounced contact bits"}
+  ],
+  "excluded_from_hardware_claim": [
+    "base linear velocity measurement",
+    "privileged simulator state",
+    "checkpoint files",
+    "autonomous hardware motion"
+  ]
+}

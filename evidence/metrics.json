@@ -1,0 +1,70 @@
+{
+  "schema": "ari_public_portfolio_metrics_v1",
+  "portfolio_snapshot": true,
+  "created_for_public_review": true,
+  "overall_status": {
+    "hardware_exists": true,
+    "deterministic_hardware_gait_proven": true,
+    "learned_locomotion_status": "simulator-only",
+    "hardware_policy_deployment_cleared": false,
+    "autonomous_hardware_motion_allowed": false
+  },
+  "physical_platform": {
+    "provenance_category": "verified physical/context notes",
+    "legs": 6,
+    "dof_per_leg": 3,
+    "total_dof": 18
+  },
+  "run63_deploy_observation_baseline": {
+    "provenance_category": "verified simulator handoff and media capture",
+    "status": "canonical historical walker",
+    "simulator_only": true,
+    "notes": "Deployable-observation forward-walking baseline; deterministic hardware gait is separate."
+  },
+  "run64_speed_envelope": {
+    "provenance_category": "verified simulator summary",
+    "status": "speed-envelope evidence, not full balance-table promotion",
+    "simulator_only": true,
+    "commanded_mps": 0.45,
+    "achieved_mean_mps": 0.2704,
+    "fall_fraction": 0.0,
+    "contact_match": 0.9488
+  },
+  "run94_8_scan_turn": {
+    "provenance_category": "verified simulator qualification record",
+    "status": "scan-turn simulator qualification",
+    "simulator_only": true,
+    "selected_checkpoint": "Run94.6 model_11",
+    "qualification": "zero-fall full +/-360 simulation qualification"
+  },
+  "runv4_force_drive_zero_action": {
+    "provenance_category": "verified simulator diagnostic report",
+    "status": "zero-action diagnostic",
+    "simulator_only": true,
+    "num_envs": 64,
+    "steps": 3000,
+    "true_terminations": 0,
+    "body_height_min_m": 0.109568983,
+    "applied_torque_max_abs_nm": 0.394471645,
+    "peak_abs_qd_rad_s": 0.331431627
+  },
+  "stage1_safe_025": {
+    "provenance_category": "verified simulator training summary plus terminal gate finding",
+    "status": "not promoted",
+    "simulator_only": true,
+    "accepted_optimizer_updates": 50,
+    "checkpoint_created": true,
+    "promotion": false,
+    "reason_not_promoted": "The +0.05 m/s forward replay displaced only approximately 0.00003036 m against a 0.005 m gate.",
+    "forward_replay_command_mps": 0.05,
+    "forward_replay_displacement_m": 0.00003036,
+    "forward_gate_m": 0.005
+  },
+  "public_boundaries": [
+    "Portfolio snapshot, not full operational tree.",
+    "No model checkpoints or binary training artifacts are included.",
+    "Learned locomotion is simulator-only and not cleared for physical deployment.",
+    "Stage1 force-drive is not promoted.",
+    "Autonomous hardware motion is prohibited."
+  ]
+}

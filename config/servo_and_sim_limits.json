@@ -1,0 +1,35 @@
+{
+  "portfolio_snapshot": true,
+  "provenance": "sanitized representative values derived from the read-only engineering tree",
+  "robot": "ari_hexapod",
+  "physical_platform": {
+    "legs": 6,
+    "dof_per_leg": 3,
+    "total_dof": 18,
+    "segment_lengths_mm": {
+      "coxa": 48.0,
+      "femur": 78.5,
+      "tibia": 139.0
+    }
+  },
+  "sim_units": {
+    "length": "meter",
+    "angle": "radian",
+    "torque": "newton_meter"
+  },
+  "representative_joint_limits_deg": {
+    "coxa_yaw": [-35.0, 35.0],
+    "femur_pitch": [-55.0, 65.0],
+    "tibia_pitch": [-90.0, 35.0]
+  },
+  "contact_model": {
+    "foot_static_friction": 1.6,
+    "foot_dynamic_friction": 1.3,
+    "restitution": 0.0
+  },
+  "safety_notes": [
+    "This file cannot command hardware.",
+    "The narrower firmware and mechanical safety limits must win over policy targets.",
+    "Simulator actuator settings are evidence inputs, not hardware deployment approval."
+  ]
+}
