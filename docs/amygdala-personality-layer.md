@@ -4,7 +4,7 @@ This document describes ARI's persistent affect and personality layer at an arch
 
 This public version is sanitized. It does not include live emotional values, private event triggers, personal information, private vault paths, credentials, endpoints, or operational configuration.
 
-## Design Goal
+## Why This Makes ARI More Personable
 
 ARI is designed as a persistent assistant rather than a stateless chat wrapper. A purely per-message assistant can sound competent but socially discontinuous: it may forget whether the recent working relationship has been tense, collaborative, uncertain, energized, or low-friction. The amygdala/personality layer gives ARI a bounded memory of emotional context across turns and sessions so response style can adapt without changing facts, permissions, or safety rules.
 
