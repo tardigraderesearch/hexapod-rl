@@ -30,6 +30,8 @@ That makes SARA an honest historical milestone, not a source-backed artifact. Th
 
 SARA's lessons evolved into ARI: a persistent assistant grounded in an Obsidian vault and later integrated with Hermes Agent for memory, tool use, messaging, voice, and bounded coding delegation. Public documentation stays at the architectural level and omits vault content, paths, IDs, endpoints, credentials, private prompts, and operational configuration.
 
+ARI also includes a persistent amygdala/personality layer that tracks bounded, normalized affect dimensions from sanitized event records and transcript-derived signals. It is documented as software architecture, not consciousness or human emotion: the layer can shape warmth, directness, patience, initiative, curiosity, and response length while never changing truthfulness, permissions, safety rules, or instruction hierarchy. See [docs/amygdala-personality-layer.md](docs/amygdala-personality-layer.md).
+
 #### Thinking Architecture
 
 ![Graph visualization of linked knowledge and memory nodes supporting ARI software retrieval and reasoning](media/software-architecture/thinking-architecture.jpg)
@@ -97,6 +99,7 @@ AI tools accelerated implementation, review, documentation, and comparison work.
 ## Repository Tour
 
 - [docs/software-lineage.md](docs/software-lineage.md): SARA to ARI assistant to ARI robot.
+- [docs/amygdala-personality-layer.md](docs/amygdala-personality-layer.md): persistent affect/personality architecture, bounded updates, decay, and public-safe behavior effects.
 - [docs/build-evolution.md](docs/build-evolution.md): visual robot timeline with honest captions.
 - [docs/architecture.md](docs/architecture.md): hardware/simulation/control architecture.
 - [docs/wearable-assistant.md](docs/wearable-assistant.md): public-safe wearable assistant collaboration evidence.
