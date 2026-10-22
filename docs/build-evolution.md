@@ -4,6 +4,12 @@ This page documents the physical robot build using only public, sanitized media 
 
 ## Timeline
 
+### Aluminum prototype
+
+![Aluminum prototype](../media/build-evolution/00-aluminum-prototype.jpg)
+
+The first attempt: hand-fabricated aluminum brackets, hobby servos, a depth camera and power-tool batteries.
+
 ### Concept sketches
 
 ![Concept leg assembly](../media/build-evolution/01-concept-sketches/concept-leg-assembly.jpg)

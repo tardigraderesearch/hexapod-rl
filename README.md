@@ -52,6 +52,10 @@ This is a snapshot, not a full reproduction package: the Isaac Lab environment, 
 
 ## Hardware build
 
+![First prototype: hand-fabricated aluminum](media/build-evolution/00-aluminum-prototype.jpg)
+
+First prototype: hand-fabricated aluminum brackets, hobby servos, depth camera and power-tool batteries.
+
 ![Current hardware build](media/hardware-build.jpg)
 
 Current (second) hardware build, shown mid-assembly; it is not the earlier robot seen walking. The learned walking policy is validated in simulation only.
