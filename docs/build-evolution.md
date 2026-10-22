@@ -1,4 +1,4 @@
-# ARI Build Evolution
+# Build Evolution
 
 This page documents the physical robot build using only public, sanitized media in this repository. It is a robot-build timeline, not a claim that learned policies have been deployed on hardware.
 
@@ -24,35 +24,35 @@ Foot-contact sensing concept. In the public repository this is shown only as bui
 
 Prototype 2 brought the program from sketches into powered hardware: frame, servos, wiring, and control electronics arranged for bench testing.
 
-### Current hardware and electronics
+### First walking build: hardware and electronics (since disassembled)
 
-![Current model workbench](../media/build-evolution/04-current-model/current-model-workbench.jpg)
+![First walking build workbench](../media/build-evolution/04-first-walking-build/current-model-workbench.jpg)
 
 Current ARI hardware on the workbench. This is the physical platform used for deterministic scripted gait testing.
 
-![Current model top view](../media/build-evolution/04-current-model/current-model-top-view.jpg)
+![First walking build top view](../media/build-evolution/04-first-walking-build/current-model-top-view.jpg)
 
 Top view showing the six-leg mechanical layout and the integration constraints that shape wiring, controller placement, and service access.
 
-![Current model power and control stack](../media/build-evolution/04-current-model/current-model-power-and-control-stack.jpg)
+![First walking build power and control stack](../media/build-evolution/04-first-walking-build/current-model-power-and-control-stack.jpg)
 
 Power and control stack integration. Public documentation intentionally avoids exposing endpoints, identifiers, private paths, credentials, or operational configuration.
 
-![Current model ESP32 servo control](../media/build-evolution/04-current-model/current-model-esp32-servo-control.jpg)
+![First walking build ESP32 servo control](../media/build-evolution/04-first-walking-build/current-model-esp32-servo-control.jpg)
 
 ESP32-class servo-control integration for bounded joint commands and hardware bring-up.
 
-### Early gait development
+### Learning to walk (Isaac Sim)
 
-![Early gait development frame](../media/build-evolution/05-learning-to-walk/learning-to-walk-progress-frame.jpg)
+![Isaac Sim training frame](../media/build-evolution/05-learning-to-walk/learning-to-walk-progress-frame.jpg)
 
-Early gait development and learning-to-walk footage: [learning-to-walk-progress.mp4](../media/build-evolution/05-learning-to-walk/learning-to-walk-progress.mp4). The controller is intentionally left unspecified because the public artifact does not support a narrower claim.
+Learning-to-walk footage from Isaac Sim training: [learning-to-walk-progress.mp4](../media/build-evolution/05-learning-to-walk/learning-to-walk-progress.mp4) (simulation, not hardware).
 
 ### Deterministic scripted physical walk
 
-![Scripted physical walk frame](../media/build-evolution/04-current-model/physical-scripted-walk-demo-frame.jpg)
+![Scripted physical walk frame](../media/build-evolution/04-first-walking-build/physical-scripted-walk-demo-frame.jpg)
 
-Deterministic scripted physical gait: [physical-scripted-walk-demo.mp4](../media/build-evolution/04-current-model/physical-scripted-walk-demo.mp4). This is hardware evidence for coordinated servo control, not a learned hardware policy.
+Deterministic scripted physical gait: [physical-scripted-walk-demo.mp4](../media/build-evolution/04-first-walking-build/physical-scripted-walk-demo.mp4). This is hardware evidence for coordinated servo control, not a learned hardware policy.
 
 ### Simulator validation
 

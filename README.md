@@ -2,13 +2,13 @@
 
 An 18-DOF hexapod trained to walk in simulation with PPO in Isaac Lab. **Simulation-validated only: no learned policy has been transferred to the hardware.**
 
-![Simulated hexapod walking at a fixed 0.25 m/s command (Isaac Lab, 6 environments)](media/sim-walk-preview.gif)
+![First hardware build walking with a scripted gait](media/real-walk-preview.gif)
 
-Full clip: [media/ari_run63_deploy_walk_0p25.mp4](media/ari_run63_deploy_walk_0p25.mp4) (simulation, not hardware).
+*Real robot (first build, MakeYourPet-derived frame), deterministic scripted gait.* Full clip: [physical-scripted-walk-demo.mp4](media/build-evolution/04-first-walking-build/physical-scripted-walk-demo.mp4)
 
-| Scripted gait on the real robot | Simulator frame |
+| Learned policy in Isaac Sim | Training progress in Isaac Sim |
 |---|---|
-| [physical-scripted-walk-demo.mp4](media/build-evolution/04-current-model/physical-scripted-walk-demo.mp4) (deterministic, not a learned policy) | ![Isaac Lab frame](media/run63_deploy_walk_frame.png) |
+| ![Simulated hexapod walking at 0.25 m/s](media/sim-walk-preview.gif) [full clip](media/ari_run63_deploy_walk_0p25.mp4) | [learning-to-walk-progress.mp4](media/build-evolution/05-learning-to-walk/learning-to-walk-progress.mp4) |
 
 ## Hardware
 
