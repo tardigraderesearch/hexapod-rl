@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate that this public portfolio snapshot stays small and sanitized."""
+"""Validate that this public repository stays small and sanitized."""
 
 from __future__ import annotations
 
@@ -19,11 +19,9 @@ REQUIRED_FILES = [
     "docs/engineering-process.md",
     "docs/results.md",
     "docs/safety-and-limitations.md",
-    "docs/software-lineage.md",
     "docs/reproducibility.md",
     "evidence/metrics.json",
-    "media/portfolio/ari-build-story.mp4",
-    "media/portfolio/ari-build-story-poster.jpg",
+    "media/ari_run63_deploy_walk_0p25.mp4",
     "LICENSE",
     ".gitignore",
     "CITATION.cff",
@@ -56,7 +54,7 @@ PATH_PATTERNS = [
     re.compile("/" + "mnt" + r"/[a-z]/[^\s)>\"]+"),
 ]
 
-FORBIDDEN_MAC = ":".join(["dc", "b4", "d9", "14", "27", "d4"])
+MAC_PATTERN = re.compile(r"(?i)\b(?:[0-9a-f]{2}:){5}[0-9a-f]{2}\b")
 FORBIDDEN_BINARY_SUFFIXES = {".pt", ".pth", ".onnx", ".engine", ".ckpt", ".bin", ".npz", ".npy"}
 
 
@@ -126,26 +124,12 @@ def validate_language(errors: list[str]) -> None:
             errors.append(f"missing required explicit language: {phrase}")
 
     required_public_story = [
-        "june 2025",
-        "sara",
-        "hermes agent",
-        "obsidian vault",
         "deterministic scripted physical gait",
         "not a learned hardware policy",
-        "controller is unspecified",
     ]
     for phrase in required_public_story:
         if phrase not in combined:
-            errors.append(f"missing required portfolio language: {phrase}")
-
-
-def validate_portfolio_media(errors: list[str]) -> None:
-    video = ROOT / "media" / "portfolio" / "ari-build-story.mp4"
-    poster = ROOT / "media" / "portfolio" / "ari-build-story-poster.jpg"
-    if not video.is_file() or not poster.is_file():
-        return
-    if video.stat().st_size >= 20 * 1024 * 1024:
-        errors.append("portfolio build-story video must be under 20 MiB")
+            errors.append(f"missing required language: {phrase}")
 
 
 def validate_sanitization(errors: list[str]) -> None:
@@ -162,7 +146,7 @@ def validate_sanitization(errors: list[str]) -> None:
             continue
         text = read_text(path)
         lowered = text.lower()
-        if FORBIDDEN_MAC in lowered:
+        if MAC_PATTERN.search(text):
             errors.append(f"forbidden controller identifier found: {rel}")
         for pattern in SECRET_PATTERNS:
             if pattern.search(text):
@@ -179,7 +163,6 @@ def main() -> int:
     validate_required(errors)
     validate_metrics(errors)
     validate_language(errors)
-    validate_portfolio_media(errors)
     validate_sanitization(errors)
 
     if errors:

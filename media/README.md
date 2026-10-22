@@ -1,14 +1,6 @@
 # Media Inventory
 
-This directory contains authentic sanitized media for the public portfolio. It does not contain private run directories, model checkpoints, credentials, local paths, or generated replacement imagery.
-
-## Software Architecture
-
-- `software-architecture/thinking-architecture.jpg`: hero image for the ARI software thinking architecture; a graph visualization of the linked knowledge and memory structure that supports retrieval and reasoning across the software architecture.
-
-## Collaboration Evidence
-
-- `collaboration/wearable-assistant-interface.jpg`: authentic wearable assistant interface prototype photograph. It shows an assistant response grounded in a camera view of the robot/code workbench and supports the public evidence note for the wearable collaboration pipeline.
+This directory contains authentic sanitized media for the public repository. It does not contain private run directories, model checkpoints, credentials, local paths, or generated replacement imagery.
 
 ## Build Evolution
 
@@ -34,8 +26,3 @@ This directory contains authentic sanitized media for the public portfolio. It d
 Run63 media is simulator-only evidence. It is not hardware deployment evidence.
 
 August 3, 2026 correction: rendered simulator evidence exposed that the legacy Run63 handoff/trainer treated URDF -X displacement as positive command-vx progress while the physical robot convention is body +X as forward. Run63, Run64, Run104, and Run105 legacy-axis media/metrics are therefore backward relative to the physical chassis front and are not physical-forward walking or speed evidence. The new Run104 update-100 render is not included in this public snapshot.
-
-## Portfolio Exports
-
-- `portfolio/ari-build-story.mp4`: silent captioned 1280x720 H.264 portfolio build-story video assembled only from authentic supplied media.
-- `portfolio/ari-build-story-poster.jpg`: 1280x720 poster image for the build-story video.

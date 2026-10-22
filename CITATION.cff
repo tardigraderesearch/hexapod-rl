@@ -1,9 +1,9 @@
 cff-version: 1.2.0
-message: "If you use this public portfolio snapshot as context, cite it as below."
-title: "ARI Hexapod Portfolio Snapshot"
+message: "If you use this this repository, cite it as below."
+title: "hexapod-rl"
 authors:
-  - name: "ARI-bot project"
+  - name: "evilhobo1911"
 date-released: "2026-08-01"
 license: "MIT"
-repository-code: "https://github.com/evilhobo1911/ARI-bot"
-abstract: "Public sanitized portfolio snapshot of an 18-DOF hexapod project, including embedded gait-control examples, Isaac Lab simulator evidence, and safety-gated validation notes."
+repository-code: "https://github.com/evilhobo1911/hexapod-rl"
+abstract: "Sanitized snapshot of an 18-DOF hexapod project, including embedded gait-control examples, Isaac Lab simulator evidence, and safety-gated validation notes."
