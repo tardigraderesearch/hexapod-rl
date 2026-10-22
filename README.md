@@ -52,14 +52,14 @@ This is a snapshot, not a full reproduction package: the Isaac Lab environment, 
 
 ## Hardware build
 
-![Hardware build in progress](media/hardware-build.jpg)
+![Current hardware build](media/hardware-build.jpg)
 
-Physical build in progress. The walking policy is validated in simulation only.
+Current (second) hardware build, shown mid-assembly; it is not the earlier robot seen walking. The learned walking policy is validated in simulation only.
 
 ## Provenance and credits
 
 - **Femurs and tibias:** original designs, modeled in Onshape.
-- **Upper and lower frame plates:** derived from an open-source hexapod design (original source not recorded), then substantially modified — widened, elongated, angled coxa mounts, reworked wall angles, and new reliefs for this build's hardware.
+- **Upper and lower frame plates:** started from the open-source [MakeYourPet hexapod](https://github.com/MakeYourPet/hexapod) (MIT), then substantially modified — widened, elongated, angled coxa mounts, reworked wall angles, and new reliefs for this build's hardware.
 - No CAD or mesh files are distributed in this repo.
 - Everything else (control, simulation setup, training, evaluation) is original work in this repo.
 
