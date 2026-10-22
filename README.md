@@ -50,10 +50,17 @@ Full clip: [media/ari_run63_deploy_walk_0p25.mp4](media/ari_run63_deploy_walk_0p
 
 This is a snapshot, not a full reproduction package: the Isaac Lab environment, full asset tree, checkpoints and firmware are not included.
 
+## Hardware build
+
+![Hardware build in progress](media/hardware-build.jpg)
+
+Physical build in progress. The walking policy is validated in simulation only.
+
 ## Provenance and credits
 
-- The robot body is based on a downloaded **CORE.3mf** model. TODO before publishing: add the original author, source link and license.
-- The tibias come from a separate downloaded model. TODO before publishing: add the original author, source link and license.
+- **Femurs and tibias:** original designs, modeled in Onshape.
+- **Upper and lower frame plates:** derived from an open-source hexapod design (original source not recorded), then substantially modified — widened, elongated, angled coxa mounts, reworked wall angles, and new reliefs for this build's hardware.
+- No CAD or mesh files are distributed in this repo.
 - Everything else (control, simulation setup, training, evaluation) is original work in this repo.
 
 ## License
