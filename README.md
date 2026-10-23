@@ -70,8 +70,3 @@ Current (second) hardware build, shown mid-assembly; it is not the earlier robot
 ## License
 
 MIT, see [LICENSE](LICENSE). Citation metadata: [CITATION.cff](CITATION.cff).
-
-## How this was built
-AI is used here as a tool to speed up implementation. I design the system and
-define what "working" means. When issues are found, they're identified, and
-ARI — my own agent system — fixes them against those checks.
