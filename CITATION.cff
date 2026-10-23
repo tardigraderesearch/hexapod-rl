@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "If you use this this repository, cite it as below."
 title: "hexapod-rl"
 authors:
-  - name: "evilhobo1911"
+  - name: "tardigraderesearch"
 date-released: "2026-08-01"
 license: "MIT"
-repository-code: "https://github.com/evilhobo1911/hexapod-rl"
+repository-code: "https://github.com/tardigraderesearch/hexapod-rl"
 abstract: "Sanitized snapshot of an 18-DOF hexapod project, including embedded gait-control examples, Isaac Lab simulator evidence, and safety-gated validation notes."
