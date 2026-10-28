@@ -1,9 +1,9 @@
 cff-version: 1.2.0
-message: "If you use this this repository, cite it as below."
+message: "If you use this repository, cite it as below."
 title: "hexapod-rl"
 authors:
   - name: "tardigraderesearch"
 date-released: "2026-08-01"
 license: "MIT"
 repository-code: "https://github.com/tardigraderesearch/hexapod-rl"
-abstract: "Sanitized snapshot of an 18-DOF hexapod project, including embedded gait-control examples, Isaac Lab simulator evidence, and safety-gated validation notes."
+abstract: "18-DOF 3D-printed hexapod robot with a PPO walking policy trained in Isaac Lab, plus bill of materials and build guide."

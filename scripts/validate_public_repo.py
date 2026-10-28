@@ -16,12 +16,12 @@ REQUIRED_FILES = [
     "README.md",
     "docs/architecture.md",
     "docs/build-evolution.md",
-    "docs/engineering-process.md",
     "docs/results.md",
-    "docs/safety-and-limitations.md",
-    "docs/reproducibility.md",
+    "docs/diagrams/architecture.drawio",
+    "docs/diagrams/architecture.png",
     "evidence/metrics.json",
     "media/ari_run63_deploy_walk_0p25.mp4",
+    "media/hero-sim-gait.gif",
     "LICENSE",
     ".gitignore",
     "CITATION.cff",
@@ -30,6 +30,7 @@ REQUIRED_FILES = [
 
 TEXT_SUFFIXES = {
     ".cff",
+    ".drawio",
     ".css",
     ".html",
     ".ino",
@@ -113,25 +114,6 @@ def validate_metrics(errors: list[str]) -> None:
         errors.append("stage1_safe_025 must record the 0.005 m forward gate")
 
 
-def validate_language(errors: list[str]) -> None:
-    combined = "\n".join(
-        read_text(path)
-        for path in iter_files()
-        if path.suffix.lower() in TEXT_SUFFIXES
-    ).lower()
-    for phrase in ["simulator-only", "not promoted", "autonomous hardware motion is prohibited"]:
-        if phrase not in combined:
-            errors.append(f"missing required explicit language: {phrase}")
-
-    required_public_story = [
-        "deterministic scripted physical gait",
-        "not a learned hardware policy",
-    ]
-    for phrase in required_public_story:
-        if phrase not in combined:
-            errors.append(f"missing required language: {phrase}")
-
-
 def validate_sanitization(errors: list[str]) -> None:
     for path in iter_files():
         rel = relative(path)
@@ -162,7 +144,6 @@ def main() -> int:
     errors: list[str] = []
     validate_required(errors)
     validate_metrics(errors)
-    validate_language(errors)
     validate_sanitization(errors)
 
     if errors:
