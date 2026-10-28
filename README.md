@@ -31,7 +31,7 @@ The robot was measured (leg lengths, mass, servo limits) and rebuilt as a digita
 
 ## Bill of materials
 
-Parts as used on the walking build. Prices are approximate 2026 street prices in USD.
+Parts as used on the walking build, all bought on Amazon. Prices are approximate 2026 street prices in USD. Parts marked "(or equivalent)" are representative listings that match the spec of the part used; any listing with the same spec will do. Items marked "Recommended" are standard choices where the original build's exact value wasn't recorded.
 
 ### Motion
 
@@ -39,8 +39,8 @@ Parts as used on the walking build. Prices are approximate 2026 street prices in
 |---|---|---|---|
 | Hip (coxa) servo: [JX CLS6322HV](https://servodatabase.com/servo/jx-servo/cls6322hv) | 6 | HV coreless, 2.07 N·m at 7.4 V, 120° variant | ~$40–46 each |
 | Knee and ankle servo: [Yipin GX3270BLS](https://rccrawlers.net/2025/05/14/yipin_70kg_2505/) | 12 | 70 kg-class brushless HV, 25T spline, 270° variant, 0.10 s/60° at 7.4 V | ~$35–70 each |
-| Servo arms, 25T (knee and ankle) | 12 | Femur pocket: Ø16.2 mm hub, 12.6 → 7.6 mm taper, 4.4 mm deep | |
-| Servo arms (hip) | 6 | | |
+| Servo arms, 25T (knee and ankle) | 12 | The aluminium 25T arm supplied with each GX3270BLS. Femur pocket: Ø16.2 mm hub, 12.6 → 7.6 mm taper, 4.4 mm deep | included with the servo |
+| Servo arms (hip): [Hobbypark 25T aluminium servo arm, 5-pack](https://www.amazon.com/Hobbypark-Aluminum-Standard-Torque-Motors/dp/B06XQ2SRGC) (or equivalent) | 6 | 25T clamping aluminium arm, M3 holes, to fit the CLS6322HV's 25T spline | ~$10–13 per 5-pack (2 packs) |
 
 ### Control and sensing
 
@@ -48,18 +48,18 @@ Parts as used on the walking build. Prices are approximate 2026 street prices in
 |---|---|---|---|
 | [ESP32-S3](https://www.espressif.com/en/products/socs/esp32-s3) dev board | 1 | Dual-core, native USB; mounted on a screw-terminal breakout | ~$15 |
 | PCA9685 16-channel servo driver ([Adafruit 815](https://www.adafruit.com/product/815)) | 2 | I2C, 50 Hz; addresses 0x40 (left) and 0x41 (right, A0 bridged) | ~$6–10 each |
-| Foot-contact switch | 6 | COM / NO / NC switch, wired COM → GPIO, NO → GND | |
+| Foot-contact switch: [KW12 hinge-lever micro switch, 10-pack](https://www.amazon.com/Antrader-10-Pack-KW12-KW11-Switches/dp/B07YQQ3R7W) (or equivalent) | 6 | SPDT micro switch, 3 terminals (COM / NO / NC), 5 A; wired COM → GPIO, NO → GND, NC unused | ~$7–9 per 10-pack |
 | [Luxonis OAK-D Pro](https://uk.robotshop.com/products/luxonis-oak-d-pro-camera-fixed-focus) | 1 | Stereo depth camera with built-in IMU (the policy's tilt and turn-rate source) | ~$300–400 |
-| [NVIDIA Jetson Orin](https://developer.nvidia.com/embedded/jetson-orin) + Waveshare case | 1 | Onboard computer | |
+| [NVIDIA Jetson Orin Nano Super dev kit + Waveshare aluminium case](https://www.amazon.com/waveshare-Development-Embedded-Aluminum-Wireless/dp/B0FN773FFC) | 1 | Onboard computer: Jetson Orin Nano module, 8 GB LPDDR5 (or equivalent: any 8 GB Orin Nano dev kit plus a [Waveshare Orin case](https://www.amazon.com/Waveshare-Aluminum-Mini-Computer-Compatible-withJetson/dp/B0CG38BS5S)); powered at 12 V from the buck converter | ~$280–330 |
 
 ### Power
 
 | Part | Qty | Spec | Approx. cost |
 |---|---|---|---|
 | 20 V tool battery (DeWalt-compatible, labelled DCB204) | 2 | 20 V, 8.0 Ah, 160 Wh Li-ion | ~$25–45 each (aftermarket) |
-| Battery-to-wire adapter for the 20 V packs | 2 | | |
-| [Castle Creations](https://www.castlecreations.com/) BEC (servo rail) | 2 | Set to 7.4 V; outputs kept separate, never paralleled | |
-| Buck converter (Jetson supply) | 1 | Finned aluminium module | |
+| Battery-to-wire adapter: [Power Wheels adapter for DeWalt 20 V, 2-pack](https://www.amazon.com/Adapter-Battery-Lithium-Convertor-Robotics/dp/B09J4R4QZ6) (or equivalent) | 2 | Clips onto a DeWalt-style 20 V pack; built-in switch, 30 A fuse, 12 AWG leads | ~$15–20 per 2-pack |
+| BEC (servo rail): [Castle Creations CC BEC Pro 20A](https://www.amazon.com/Castle-Creations-Bec-Switching-Regulator/dp/B002ITEL42) | 2 | 20 A peak, about 13–15 A continuous at 20 V input, up to 12S input. Ships at 5.1 V; program to 7.4 V with a Castle Link USB adapter (~$25, buy one). Outputs kept separate, never paralleled | ~$45–55 each |
+| Buck converter (Jetson supply): [24 V → 12 V 10 A step-down, 15–40 V input](https://www.amazon.com/Converter-Transformer-Waterproof-Voltage-Reducer/dp/B08YYKSRJW) (or equivalent) | 1 | Finned aluminium, potted module; 20 V pack in, 12 V out to the Jetson's DC barrel jack | ~$15–20 |
 
 ### Frame and hardware
 
@@ -71,22 +71,22 @@ Parts as used on the walking build. Prices are approximate 2026 street prices in
 | Tibias (printed, original design in Onshape) | 6 | 139 mm from ankle horn to floor, ~16 cm³ each | in filament |
 | Foot tips (printed) | 6 | ~0.4 cm³ each | in filament |
 | Filament: PLA / PLA Pro, PETG for flexing parts | ~0.3–0.6 kg | ~484 cm³ of parts in total; printed on a Bambu A1 | ~$20 per 1 kg spool |
-| Heat-set inserts | as needed | Ankles and coxa mounts | |
-| M3 screws | as needed | Servo-arm tip screw is M3 (Ø3.2 mm clearance, 30 mm from the pivot) | |
-| Epoxy putty | 1 | Fills and locks the coxa mounts around the inserts | |
+| Heat-set inserts: [ruthex M3 × 5.7 mm brass, 100-pack](https://www.amazon.com/dp/B08BCRZZS3) (or equivalent) | as needed | M3 thread to match the M3 screws. Ankles and coxa mounts | ~$10–13 per 100 |
+| M3 screws: [M3 socket-head assortment, 6–30 mm, with nuts and washers](https://www.amazon.com/Hex-Socket-Head-Screws-Assortment/dp/B0HKFCTLK8) (or equivalent) | as needed | Servo-arm tip screw is M3 (Ø3.2 mm clearance, 30 mm from the pivot). Recommended: M3 × 8–12 mm into the inserts, M3 × 16–20 mm through arm and femur; trim to your part thickness | ~$10–15 per kit |
+| Epoxy putty: [J-B Weld SteelStik](https://www.amazon.com/J-B-Weld-8267-S-SteelStik-Reinforced/dp/B000786GLM) (or equivalent) | 1 | Hand-mixed steel-reinforced epoxy putty; fills and locks the coxa mounts around the inserts | ~$8–12 |
 
 ### Wiring
 
 | Part | Qty | Spec |
 |---|---|---|
-| Servo extension leads | 18 | Plug-in connectors rather than solder splices, so parts can be swapped |
-| Servo power wire | as needed | At least as heavy as the servo leads |
-| Foot-switch wire | 6 runs | |
-| I2C and logic jumpers | ~10 | Dupont or screw terminal |
+| Servo extension leads: [300 mm JR/Futaba male-to-female](https://www.amazon.com/Aliotech-Remote-Control-Extension-Airplane/dp/B094FY11XQ) (or equivalent) | 18 | 22 AWG, plug-in connectors rather than solder splices, so parts can be swapped. Recommended length 300 mm; measure your routing. ~$12–15 for 18–20 |
+| Servo power wire: [14 AWG silicone, red and black](https://www.amazon.com/BNTECHGO-Silicone-Flexible-Strands-Stranded/dp/B01AAX65ZK) (or equivalent) | as needed | At least as heavy as the servo leads. Recommended: 14 AWG from each BEC to its PCA9685 `V+`, about 30 cm per run; the battery side uses the adapters' 12 AWG leads. ~$15–18 |
+| Foot-switch wire: [22 AWG 2-conductor stranded cable](https://www.amazon.com/Gauge-Conductor-Stranded-Security-Black/dp/B00JV67KYS) (or equivalent) | 6 runs | Recommended: 22 AWG stranded, about 40 cm per run from tibia to ESP32, strain-relieved at each joint. ~$10–12 |
+| I2C and logic jumpers | ~10 | Dupont or screw terminal; 20 cm Dupont jumpers. ~$6–8 per pack |
 
 **Optional voice add-on (used in the live demo):** a LavMicro lavalier mic and a BTS0011 Bluetooth speaker on the Jetson, for offline voice commands ("stand", "salute", "down").
 
-Servos, controller, drivers, camera, batteries and filament come to roughly **$1,000–1,550**; the Jetson is extra.
+Everything above comes to roughly **$1,575–2,325**, including the Jetson (about $280–330) and the Castle Link adapter. Without the Jetson it is roughly $1,300–2,000. The printer and the optional voice add-on are not included.
 
 ## Build it yourself
 
@@ -97,6 +97,8 @@ Servos, controller, drivers, camera, batteries and filament come to roughly **$1
 ### 1. Print
 
 Print the frame plates from the [MakeYourPet hexapod](https://github.com/MakeYourPet/hexapod) and widen them to suit your servos. Model your femurs and tibias to the measured lengths (coxa 48 mm, femur 78.5 mm, tibia 139 mm) so the simulator's numbers match your robot. Prototype in PLA, and use PETG where a part flexes or takes impacts.
+
+Recommended print settings (the walking build was printed on a Bambu A1; record your own): 0.4 mm nozzle, 0.2 mm layers, 4–6 walls, 20–30% gyroid infill, with solid (100%) modifiers around heat-set insert holes, servo-arm pockets and other fastener areas. Dense global infill adds weight and warping without adding much strength; extra walls do more.
 
 ### 2. Assemble
 
