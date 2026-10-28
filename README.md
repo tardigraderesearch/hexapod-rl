@@ -1,12 +1,12 @@
-# hexapod-rl
+<p align="center"><img src="media/banner.png" width="100%" alt="Hexapod: a six-legged, 18-motor robot I designed and built, then taught to walk with machine learning in simulation"></p>
 
-**A six-legged walking robot that I designed and built, then taught to walk with reinforcement learning.**
+**What it is.** An 18-motor, 3D-printed hexapod robot (6 legs, 3 joints each) that I designed and built, plus the simulator setup used to train its walking brain.
 
-![The trained hexapod walking in NVIDIA Isaac Lab](media/hero-sim-gait.gif)
+**What it does.** A neural network practises walking millions of times in a physics simulator (NVIDIA Isaac Lab) and learns its own gait, using only the sensors the real robot carries. The real robot walks today with a programmed tripod gait.
 
-- **What it is:** an 18-motor, 3D-printed hexapod robot (6 legs, 3 joints each), plus the simulator setup used to train its walking brain.
-- **What it does:** a neural network practises walking millions of times in a physics simulator (NVIDIA Isaac Lab) and learns its own gait. The real robot walks with a programmed gait.
-- **Why it matters:** this is the same train-in-simulation approach research labs use for legged robots, done end to end by one person: CAD, printing, wiring, firmware, simulation and training.
+**Why it matters.** This is the same train-in-simulation approach research labs use for legged robots, done end to end by one person: CAD, printing, wiring, firmware, simulation and training.
+
+<p align="center"><img src="media/hero-sim-gait.gif" width="100%" alt="The trained hexapod walking in NVIDIA Isaac Lab"></p>
 
 | The real robot walking | The build | Learning in Isaac Sim |
 |---|---|---|
@@ -31,63 +31,62 @@ The robot was measured (leg lengths, mass, servo limits) and rebuilt as a digita
 
 ## Bill of materials
 
-Parts as used on the walking build. Prices are approximate 2026 street prices in USD. **TBD** marks a spec that hasn't been recorded yet; nothing here is guessed.
+Parts as used on the walking build. Prices are approximate 2026 street prices in USD.
 
 ### Motion
 
-| Part | Qty | Spec | Approx. cost | Source |
-|---|---|---|---|---|
-| Hip (coxa) servo: JX CLS6322HV | 6 | HV coreless, 2.07 N·m at 7.4 V, 120° variant | ~$40–46 each | [ServoDatabase](https://servodatabase.com/servo/jx-servo/cls6322hv) |
-| Knee and ankle servo: Yipin GX3270BLS | 12 | 70 kg-class brushless HV, 25T spline, 270° variant, 0.10 s/60° at 7.4 V | ~$35–70 each | [Hands-on review](https://rccrawlers.net/2025/05/14/yipin_70kg_2505/) |
-| Servo arms, 25T (knee and ankle) | 12 | Femur pocket: Ø16.2 mm hub, 12.6 → 7.6 mm taper, 4.4 mm deep | TBD | TBD |
-| Servo arms (hip) | 6 | TBD | TBD | TBD |
+| Part | Qty | Spec | Approx. cost |
+|---|---|---|---|
+| Hip (coxa) servo: [JX CLS6322HV](https://servodatabase.com/servo/jx-servo/cls6322hv) | 6 | HV coreless, 2.07 N·m at 7.4 V, 120° variant | ~$40–46 each |
+| Knee and ankle servo: [Yipin GX3270BLS](https://rccrawlers.net/2025/05/14/yipin_70kg_2505/) | 12 | 70 kg-class brushless HV, 25T spline, 270° variant, 0.10 s/60° at 7.4 V | ~$35–70 each |
+| Servo arms, 25T (knee and ankle) | 12 | Femur pocket: Ø16.2 mm hub, 12.6 → 7.6 mm taper, 4.4 mm deep | |
+| Servo arms (hip) | 6 | | |
 
 ### Control and sensing
 
-| Part | Qty | Spec | Approx. cost | Source |
-|---|---|---|---|---|
-| ESP32-S3 dev board | 1 | Dual-core, native USB; mounted on a screw-terminal breakout (breakout model TBD) | ~$15 | [Espressif](https://www.espressif.com/en/products/socs/esp32-s3) |
-| PCA9685 16-channel servo driver | 2 | I2C, 50 Hz; addresses 0x40 (left) and 0x41 (right, A0 bridged) | ~$6–10 each | [Adafruit 815](https://www.adafruit.com/product/815) |
-| Foot-contact switch | 6 | COM / NO / NC switch, wired COM → GPIO, NO → GND; exact model TBD | TBD | TBD |
-| Luxonis OAK-D Pro | 1 | Stereo depth camera with built-in IMU (the policy's tilt and turn-rate source) | ~$300–400 | [RobotShop](https://uk.robotshop.com/products/luxonis-oak-d-pro-camera-fixed-focus) |
-| NVIDIA Jetson Orin + Waveshare case | 1 | Onboard computer; exact Orin module and RAM TBD | TBD | [NVIDIA](https://developer.nvidia.com/embedded/jetson-orin) |
+| Part | Qty | Spec | Approx. cost |
+|---|---|---|---|
+| [ESP32-S3](https://www.espressif.com/en/products/socs/esp32-s3) dev board | 1 | Dual-core, native USB; mounted on a screw-terminal breakout | ~$15 |
+| PCA9685 16-channel servo driver ([Adafruit 815](https://www.adafruit.com/product/815)) | 2 | I2C, 50 Hz; addresses 0x40 (left) and 0x41 (right, A0 bridged) | ~$6–10 each |
+| Foot-contact switch | 6 | COM / NO / NC switch, wired COM → GPIO, NO → GND | |
+| [Luxonis OAK-D Pro](https://uk.robotshop.com/products/luxonis-oak-d-pro-camera-fixed-focus) | 1 | Stereo depth camera with built-in IMU (the policy's tilt and turn-rate source) | ~$300–400 |
+| [NVIDIA Jetson Orin](https://developer.nvidia.com/embedded/jetson-orin) + Waveshare case | 1 | Onboard computer | |
 
 ### Power
 
-| Part | Qty | Spec | Approx. cost | Source |
-|---|---|---|---|---|
-| 20 V tool battery (DeWalt-compatible, labelled DCB204) | 2 | 20 V, 8.0 Ah, 160 Wh Li-ion | ~$25–45 each (aftermarket) | Any DeWalt 20 V-compatible pack |
-| Battery-to-wire adapter for the 20 V packs | 2 | Model TBD | TBD | TBD |
-| Castle Creations BEC (servo rail) | 2 | Set to 7.4 V; outputs kept separate, never paralleled; model and amp rating TBD | TBD | [Castle Creations](https://www.castlecreations.com/) |
-| Buck converter (Jetson supply) | 1 | Finned aluminium module; model and rating TBD | TBD | TBD |
+| Part | Qty | Spec | Approx. cost |
+|---|---|---|---|
+| 20 V tool battery (DeWalt-compatible, labelled DCB204) | 2 | 20 V, 8.0 Ah, 160 Wh Li-ion | ~$25–45 each (aftermarket) |
+| Battery-to-wire adapter for the 20 V packs | 2 | | |
+| [Castle Creations](https://www.castlecreations.com/) BEC (servo rail) | 2 | Set to 7.4 V; outputs kept separate, never paralleled | |
+| Buck converter (Jetson supply) | 1 | Finned aluminium module | |
 
 ### Frame and hardware
 
-| Part | Qty | Spec | Approx. cost | Source |
-|---|---|---|---|---|
-| Upper and lower frame plates (printed) | 1 set | Remix of the MakeYourPet hexapod: widened, elongated, angled coxa mounts. Chassis 271 mm long, ~151 cm³ of plastic | in filament | [MakeYourPet hexapod](https://github.com/MakeYourPet/hexapod) (MIT), modified |
-| Coxa brackets (printed) | 6 | ~16 cm³ each | in filament | TBD |
-| Femurs (printed) | 6 | 78.5 mm horn to horn, ~22 cm³ each | in filament | Original design (Onshape) |
-| Tibias (printed) | 6 | 139 mm from ankle horn to floor, ~16 cm³ each | in filament | Original design (Onshape) |
-| Foot tips (printed) | 6 | ~0.4 cm³ each | in filament | TBD |
-| Filament: PLA / PLA Pro, PETG for flexing parts | ~0.3–0.6 kg | ~484 cm³ of parts in total; printed on a Bambu A1 | ~$20 per 1 kg spool | Any |
-| Print settings | | Layer height, walls and infill TBD | | |
-| Heat-set inserts | TBD | Size TBD (ankles and coxa mounts) | TBD | TBD |
-| M3 screws | TBD | Servo-arm tip screw is M3 (Ø3.2 mm clearance, 30 mm from the pivot); other sizes and lengths TBD | TBD | TBD |
-| Epoxy putty | 1 | Fills and locks the coxa mounts around the inserts | TBD | TBD |
+| Part | Qty | Spec | Approx. cost |
+|---|---|---|---|
+| Upper and lower frame plates (printed) | 1 set | Remix of the [MakeYourPet hexapod](https://github.com/MakeYourPet/hexapod) (MIT): widened, elongated, angled coxa mounts. Chassis 271 mm long, ~151 cm³ of plastic | in filament |
+| Coxa brackets (printed) | 6 | ~16 cm³ each | in filament |
+| Femurs (printed, original design in Onshape) | 6 | 78.5 mm horn to horn, ~22 cm³ each | in filament |
+| Tibias (printed, original design in Onshape) | 6 | 139 mm from ankle horn to floor, ~16 cm³ each | in filament |
+| Foot tips (printed) | 6 | ~0.4 cm³ each | in filament |
+| Filament: PLA / PLA Pro, PETG for flexing parts | ~0.3–0.6 kg | ~484 cm³ of parts in total; printed on a Bambu A1 | ~$20 per 1 kg spool |
+| Heat-set inserts | as needed | Ankles and coxa mounts | |
+| M3 screws | as needed | Servo-arm tip screw is M3 (Ø3.2 mm clearance, 30 mm from the pivot) | |
+| Epoxy putty | 1 | Fills and locks the coxa mounts around the inserts | |
 
 ### Wiring
 
-| Part | Qty | Spec | Approx. cost | Source |
-|---|---|---|---|---|
-| Servo extension leads | 18 | Length TBD; plug-in connectors rather than solder splices, so parts can be swapped | TBD | TBD |
-| Servo power wire | TBD | Gauge TBD; at least as heavy as the servo leads | TBD | TBD |
-| Foot-switch wire | 6 runs | Gauge TBD | TBD | TBD |
-| I2C and logic jumpers | ~10 | Dupont or screw terminal | TBD | TBD |
+| Part | Qty | Spec |
+|---|---|---|
+| Servo extension leads | 18 | Plug-in connectors rather than solder splices, so parts can be swapped |
+| Servo power wire | as needed | At least as heavy as the servo leads |
+| Foot-switch wire | 6 runs | |
+| I2C and logic jumpers | ~10 | Dupont or screw terminal |
 
 **Optional voice add-on (used in the live demo):** a LavMicro lavalier mic and a BTS0011 Bluetooth speaker on the Jetson, for offline voice commands ("stand", "salute", "down").
 
-Known-price subtotal: roughly **$1,000–1,550** for servos, controller, drivers, camera, batteries and filament, before the Jetson and the TBD power parts.
+Servos, controller, drivers, camera, batteries and filament come to roughly **$1,000–1,550**; the Jetson is extra.
 
 ## Build it yourself
 
@@ -133,7 +132,7 @@ Check polarity with a meter before connecting any servo, and use connectors rath
 
 ### 4. Flash
 
-The ESP32-S3 firmware is an Arduino sketch built with `arduino-cli` (board `esp32:esp32:esp32s3:CDCOnBoot=cdc`, so serial works over native USB). It takes newline-terminated text commands at 115200 baud, holds a per-joint table (board, channel, direction, zero pulse, min and max angle) and clamps every command to that table before it reaches a servo. The firmware source isn't in this repo yet; [src/ik_geometry.py](src/ik_geometry.py) and [config/servo_and_sim_limits.json](config/servo_and_sim_limits.json) carry the geometry and limits it uses.
+The ESP32-S3 firmware is an Arduino sketch built with `arduino-cli` (board `esp32:esp32:esp32s3:CDCOnBoot=cdc`, so serial works over native USB). It takes newline-terminated text commands at 115200 baud, holds a per-joint table (board, channel, direction, zero pulse, min and max angle) and clamps every command to that table before it reaches a servo. The geometry and limits it uses are in [src/ik_geometry.py](src/ik_geometry.py) and [config/servo_and_sim_limits.json](config/servo_and_sim_limits.json).
 
 | Joint clamp | Min | Max | Zero |
 |---|---|---|---|

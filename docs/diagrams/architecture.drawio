@@ -1,65 +1,65 @@
 <mxfile host="drawio">
   <diagram id="arch" name="Architecture">
-    <mxGraphModel dx="1200" dy="800" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="700" background="#ffffff" math="0" shadow="0">
+    <mxGraphModel dx="1200" dy="800" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="700" background="#0b0b0b" math="0" shadow="0">
       <root>
-        <mxCell id="0"/>
-        <mxCell id="1" parent="0"/>
-        <mxCell id="simgrp" value="SIMULATION: where it learns to walk" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f1fb;strokeColor=#3b78c2;verticalAlign=top;fontStyle=1;fontSize=16;arcSize=4;" vertex="1" parent="1">
-          <mxGeometry x="20" y="20" width="460" height="640" as="geometry"/>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="simgrp" value="SIMULATION: where it learns to walk" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#151515;strokeColor=#2e2e2e;verticalAlign=top;fontStyle=1;fontSize=16;arcSize=4;fontColor=#f7ece5;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="460" height="640" as="geometry" />
         </mxCell>
-        <mxCell id="hwgrp" value="REAL ROBOT: what it runs on" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf3e3;strokeColor=#c98a1b;verticalAlign=top;fontStyle=1;fontSize=16;arcSize=4;" vertex="1" parent="1">
-          <mxGeometry x="620" y="20" width="460" height="640" as="geometry"/>
+        <mxCell id="hwgrp" value="REAL ROBOT: what it runs on" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#151515;strokeColor=#2e2e2e;verticalAlign=top;fontStyle=1;fontSize=16;arcSize=4;fontColor=#f7ece5;" vertex="1" parent="1">
+          <mxGeometry x="620" y="20" width="460" height="640" as="geometry" />
         </mxCell>
-        <mxCell id="s1" value="&lt;b&gt;Measured robot&lt;/b&gt;&lt;br&gt;leg lengths 48 / 78.5 / 139 mm, 5.53 kg" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3b78c2;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="90" y="70" width="320" height="60" as="geometry"/>
+        <mxCell id="s1" value="&lt;b&gt;Measured robot&lt;/b&gt;&lt;br&gt;leg lengths 48 / 78.5 / 139 mm, 5.53 kg" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1f1f1f;strokeColor=#4a4a4a;fontSize=13;fontColor=#f7ece5;" vertex="1" parent="1">
+          <mxGeometry x="90" y="70" width="320" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="s2" value="&lt;b&gt;Digital twin (URDF / USD)&lt;/b&gt;&lt;br&gt;18 joints, servo limits, foot contacts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3b78c2;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="90" y="170" width="320" height="60" as="geometry"/>
+        <mxCell id="s2" value="&lt;b&gt;Digital twin (URDF / USD)&lt;/b&gt;&lt;br&gt;18 joints, servo limits, foot contacts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1f1f1f;strokeColor=#4a4a4a;fontSize=13;fontColor=#f7ece5;" vertex="1" parent="1">
+          <mxGeometry x="90" y="170" width="320" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="s3" value="&lt;b&gt;Isaac Lab&lt;/b&gt;&lt;br&gt;2,048 robots in parallel, randomized friction and mass" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3b78c2;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="90" y="270" width="320" height="60" as="geometry"/>
+        <mxCell id="s3" value="&lt;b&gt;Isaac Lab&lt;/b&gt;&lt;br&gt;2,048 robots in parallel, randomized friction and mass" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1f1f1f;strokeColor=#4a4a4a;fontSize=13;fontColor=#f7ece5;" vertex="1" parent="1">
+          <mxGeometry x="90" y="270" width="320" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="s4" value="&lt;b&gt;PPO training&lt;/b&gt;&lt;br&gt;24.6 M practice steps in about 13 minutes" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3b78c2;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="90" y="370" width="320" height="60" as="geometry"/>
+        <mxCell id="s4" value="&lt;b&gt;PPO training&lt;/b&gt;&lt;br&gt;24.6 M practice steps in about 13 minutes" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1f1f1f;strokeColor=#4a4a4a;fontSize=13;fontColor=#f7ece5;" vertex="1" parent="1">
+          <mxGeometry x="90" y="370" width="320" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="s5" value="&lt;b&gt;Evaluator gates&lt;/b&gt;&lt;br&gt;falls, foot-contact match, distance walked" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3b78c2;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="90" y="470" width="320" height="60" as="geometry"/>
+        <mxCell id="s5" value="&lt;b&gt;Evaluator gates&lt;/b&gt;&lt;br&gt;falls, foot-contact match, distance walked" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1f1f1f;strokeColor=#4a4a4a;fontSize=13;fontColor=#f7ece5;" vertex="1" parent="1">
+          <mxGeometry x="90" y="470" width="320" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="s6" value="&lt;b&gt;Trained walking policy&lt;/b&gt;&lt;br&gt;72 inputs to 18 joint targets, 30 Hz" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3b78c2;fontColor=#ffffff;strokeColor=#1f4f8a;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="90" y="570" width="320" height="60" as="geometry"/>
+        <mxCell id="s6" value="&lt;b&gt;Trained walking policy&lt;/b&gt;&lt;br&gt;72 inputs to 18 joint targets, 30 Hz" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2ee67a;fontColor=#0b0b0b;strokeColor=#2ee67a;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="90" y="570" width="320" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="h1" value="&lt;b&gt;Jetson Orin&lt;/b&gt;&lt;br&gt;onboard computer, runs the gait" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#c98a1b;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="690" y="170" width="320" height="60" as="geometry"/>
+        <mxCell id="h1" value="&lt;b&gt;Jetson Orin&lt;/b&gt;&lt;br&gt;onboard computer, runs the gait" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1f1f1f;strokeColor=#4a4a4a;fontSize=13;fontColor=#f7ece5;" vertex="1" parent="1">
+          <mxGeometry x="690" y="170" width="320" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="h0" value="&lt;b&gt;OAK-D Pro camera + IMU&lt;/b&gt;&lt;br&gt;body tilt and turn rate" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#c98a1b;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="690" y="70" width="320" height="60" as="geometry"/>
+        <mxCell id="h0" value="&lt;b&gt;OAK-D Pro camera + IMU&lt;/b&gt;&lt;br&gt;body tilt and turn rate" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1f1f1f;strokeColor=#4a4a4a;fontSize=13;fontColor=#f7ece5;" vertex="1" parent="1">
+          <mxGeometry x="690" y="70" width="320" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="h2" value="&lt;b&gt;ESP32-S3 controller&lt;/b&gt;&lt;br&gt;safety clamps, servo pulses" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#c98a1b;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="690" y="270" width="320" height="60" as="geometry"/>
+        <mxCell id="h2" value="&lt;b&gt;ESP32-S3 controller&lt;/b&gt;&lt;br&gt;safety clamps, servo pulses" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1f1f1f;strokeColor=#4a4a4a;fontSize=13;fontColor=#f7ece5;" vertex="1" parent="1">
+          <mxGeometry x="690" y="270" width="320" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="h3" value="&lt;b&gt;2x PCA9685 servo drivers&lt;/b&gt;&lt;br&gt;I2C 0x40 left, 0x41 right" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#c98a1b;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="690" y="370" width="320" height="60" as="geometry"/>
+        <mxCell id="h3" value="&lt;b&gt;2x PCA9685 servo drivers&lt;/b&gt;&lt;br&gt;I2C 0x40 left, 0x41 right" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1f1f1f;strokeColor=#4a4a4a;fontSize=13;fontColor=#f7ece5;" vertex="1" parent="1">
+          <mxGeometry x="690" y="370" width="320" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="h4" value="&lt;b&gt;18 servos&lt;/b&gt;&lt;br&gt;6 hip (JX CLS6322HV) + 12 knee/ankle (GX3270BLS)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c98a1b;fontColor=#ffffff;strokeColor=#8a5d0f;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="690" y="470" width="320" height="60" as="geometry"/>
+        <mxCell id="h4" value="&lt;b&gt;18 servos&lt;/b&gt;&lt;br&gt;6 hip (JX CLS6322HV) + 12 knee/ankle (GX3270BLS)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2ee67a;fontColor=#0b0b0b;strokeColor=#2ee67a;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="690" y="470" width="320" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="h5" value="&lt;b&gt;6 foot switches&lt;/b&gt;&lt;br&gt;which feet touch the ground" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#c98a1b;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="690" y="570" width="320" height="60" as="geometry"/>
+        <mxCell id="h5" value="&lt;b&gt;6 foot switches&lt;/b&gt;&lt;br&gt;which feet touch the ground" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1f1f1f;strokeColor=#4a4a4a;fontSize=13;fontColor=#f7ece5;" vertex="1" parent="1">
+          <mxGeometry x="690" y="570" width="320" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#3b78c2;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="s1" target="s2"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#3b78c2;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="s2" target="s3"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#3b78c2;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="s3" target="s4"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#3b78c2;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="s4" target="s5"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#3b78c2;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="s5" target="s6"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#c98a1b;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="h0" target="h1"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="e7" value="USB serial" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#c98a1b;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#fdf3e3;" edge="1" parent="1" source="h1" target="h2"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="e8" value="I2C" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#c98a1b;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#fdf3e3;" edge="1" parent="1" source="h2" target="h3"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="e9" value="PWM" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#c98a1b;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#fdf3e3;" edge="1" parent="1" source="h3" target="h4"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="e10" value="GPIO" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#c98a1b;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#fdf3e3;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="h5" target="h2"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1050" y="600"/><mxPoint x="1050" y="300"/></Array></mxGeometry></mxCell>
-        <mxCell id="bridge" value="Same sensors in&lt;br&gt;both worlds: the&lt;br&gt;policy only sees&lt;br&gt;what the real robot&lt;br&gt;can measure" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontStyle=2;fontColor=#444444;" vertex="1" parent="1">
-          <mxGeometry x="485" y="180" width="130" height="100" as="geometry"/>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#a39a94;strokeWidth=2;endArrow=block;endFill=1;fontColor=#f7ece5;" edge="1" parent="1" source="s1" target="s2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#a39a94;strokeWidth=2;endArrow=block;endFill=1;fontColor=#f7ece5;" edge="1" parent="1" source="s2" target="s3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#a39a94;strokeWidth=2;endArrow=block;endFill=1;fontColor=#f7ece5;" edge="1" parent="1" source="s3" target="s4"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#a39a94;strokeWidth=2;endArrow=block;endFill=1;fontColor=#f7ece5;" edge="1" parent="1" source="s4" target="s5"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#a39a94;strokeWidth=2;endArrow=block;endFill=1;fontColor=#f7ece5;" edge="1" parent="1" source="s5" target="s6"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#a39a94;strokeWidth=2;endArrow=block;endFill=1;fontColor=#f7ece5;" edge="1" parent="1" source="h0" target="h1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e7" value="USB serial" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#a39a94;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#0b0b0b;fontColor=#f7ece5;" edge="1" parent="1" source="h1" target="h2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e8" value="I2C" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#a39a94;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#0b0b0b;fontColor=#f7ece5;" edge="1" parent="1" source="h2" target="h3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e9" value="PWM" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#a39a94;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#0b0b0b;fontColor=#f7ece5;" edge="1" parent="1" source="h3" target="h4"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e10" value="GPIO" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#a39a94;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#0b0b0b;exitX=1;exitY=0.5;entryX=1;entryY=0.5;fontColor=#f7ece5;" edge="1" parent="1" source="h5" target="h2"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1050" y="600" /><mxPoint x="1050" y="300" /></Array></mxGeometry></mxCell>
+        <mxCell id="bridge" value="Same sensors in&lt;br&gt;both worlds: the&lt;br&gt;policy only sees&lt;br&gt;what the real robot&lt;br&gt;can measure" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontStyle=2;fontColor=#f7ece5;" vertex="1" parent="1">
+          <mxGeometry x="485" y="180" width="130" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="e11" style="rounded=0;html=1;strokeColor=#666666;strokeWidth=2;dashed=1;endArrow=block;endFill=1;startArrow=block;startFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="s3" target="h2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e11" style="rounded=0;html=1;strokeColor=#a39a94;strokeWidth=2;dashed=1;endArrow=block;endFill=1;startArrow=block;startFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;fontColor=#f7ece5;" edge="1" parent="1" source="s3" target="h2"><mxGeometry relative="1" as="geometry" /></mxCell>
       </root>
     </mxGraphModel>
   </diagram>
